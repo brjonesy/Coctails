@@ -9,6 +9,7 @@ import tornadofx.*
 
 class MainView : View("Coctails") {
     val controller: DrinksController by inject()
+
     var drinksPayload = DrinksPayload()
 
     init {
@@ -17,7 +18,12 @@ class MainView : View("Coctails") {
     }
     override val root = borderpane{
         style{
-            backgroundColor += c(colorString = "#666699")
+            //backgroundColor += c(colorString = "#666699")
+        }
+        hbox{
+            label("Működik") {
+                addClass(Styles.heading)
+            }
         }
         center = vbox {
             currentDrinksView()

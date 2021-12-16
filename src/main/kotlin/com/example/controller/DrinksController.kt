@@ -21,12 +21,11 @@ class DrinksController: Controller() {
     fun listPayload(drinkName: String): List<DrinksPayload>{
         val drinkPayload : ObservableList<DrinksPayload> = api.get("?s=$drinkName")
             .list().toModel<DrinksPayload>()
-        drinkPayload[0].allDrinks[0].drinks[0].
-        forEach{
-            print("Load drink:  ${it.}")
+        drinkPayload[0].allDrinks[0].drinks.forEach{
+            print("Load drink:  ${it.nameDrink}")
         }
 
-        return drink
+        return drinkPayload
     }
 
 }
