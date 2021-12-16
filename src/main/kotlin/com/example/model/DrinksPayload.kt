@@ -9,13 +9,13 @@ import javax.json.JsonObject
 
 class DrinksPayload: JsonModel {
 
-    val drinksListProperty = SimpleObjectProperty<DrinkList>()
-    var drinkList: DrinkList by property{drinksListProperty}
+    val drinksProperty = SimpleListProperty<Drinks>()
+    var allDrinks: List<Drinks> by property(drinksProperty)
 
 
     override fun updateModel(json: JsonObject) {
         with(json){
-            drinkList = getJsonObject("city").toModel()
+            allDrinks = getJsonObject("drinks").toModel()
 
 
         }

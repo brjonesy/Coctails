@@ -7,7 +7,7 @@ import tornadofx.property
 import tornadofx.toModel
 import javax.json.JsonObject
 
-class DrinkList: JsonModel {
+class Drinks: JsonModel {
     val drinksProperty = SimpleListProperty<Drink>()
     var drinks: List<Drink> by property(drinksProperty)
 
